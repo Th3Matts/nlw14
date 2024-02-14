@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins&display=swap');
+
+*, :root{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  resize: none;
+
+  font-family: "Open sans", monospace;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body{
+  background: #0F172A;
+  color: azure;
+}
+
+main{
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+}
+
+header h1{
+  color: #F1F5F9;
+
+  margin-top: 1.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #475569;
+}
+
+#quiz{
+  counter-reset: quiz-item;
+}
+
+
+.quiz-item{
+  border: 1px solid #475569;
+  border-radius: 6px;
+
+  margin-top: 2rem;
+
+  overflow: hidden;
+}
+
+.quiz-item h3{
+  color: #E2E8F0;
+
+  background: #1E293B;
+
+  padding: 1.3rem 1.3rem ;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+#quiz h3::before{
+  counter-increment: quiz-item;
+  content: counter(quiz-item);
+
+  background: #475569;
+
+  border-radius: 50%;
+
+  font-size: 12px;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.quiz-item dl{
+  padding: 1.3rem 1.5rem;
+
+  display: grid;
+  gap: 4px;
+}
+
+.quiz-item dl dt{
+  color: #E2E8F0;
+
+  font-size: 14px;
+  line-height: 1.3rem;
+  letter-spacing: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quiz-item input{
+  all: unset;
+
+  width: 1rem;
+  height: 1rem;
+
+  font-family: "Poppins", sans-serif;
+
+  border: 1px solid #94A3B8;
+  border-radius: 50%;
+
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-item input:checked{
+  border: 1px solid #A3E635;
+}
+
+.quiz-item input:checked:before{
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 8px;
+
+  background: #A3E635;
+}
+
+#acertos{
+  width: 100%;
+  padding: 0.6rem;
+  
+  background: #A3E635;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
